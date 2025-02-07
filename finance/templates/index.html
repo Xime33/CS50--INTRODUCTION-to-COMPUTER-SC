@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in database %}
+                <tr>
+                    <td>{{ row["symbol"] }}</td>
+                    <td>{{ row["shares"] }}</td>
+                    <td>{{ row["price"] | usd }}</td> <!-- Apply USD formatting -->
+                    <td>{{ (row["shares"] * row["price"]) | usd }}</td> <!-- Calculate and format total -->
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <th scope="row">Cash</th>
+                <th>{{ cash | usd }}</th> <!-- Format cash as USD -->
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <th scope="row">Total Value</th>
+                <th>{{ (total_value + cash) | usd }}</th> <!-- Display total value -->
+            </tr>
+        </tfoot>
+    </table>
+{% endblock %}
