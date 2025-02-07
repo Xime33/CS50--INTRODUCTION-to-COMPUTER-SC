@@ -1,0 +1,51 @@
+/* Header styles */
+header.jumbotron {
+    background-color: white;
+    color: white;
+}
+
+/* Navigation link hover */
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #e9ecef;
+    padding: 10px;
+    font-size: 0.9em;
+}
+
+/* Body container */
+.container h2 {
+    color: white;
+}
+
+/* Responsive text */
+@media (max-width: 768px) {
+    header.jumbotron h1 {
+        font-size: 1.5rem;
+    }
+}
+/* Imagen de fondo para toda la página */
+body {
+    background-image: url('1377840.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* Ajustes para el encabezado */
+header.jumbotron {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejor legibilidad */
+    padding: 50px 20px;
+    border-radius: 10px;
+}
+
+/* Ajustes para el pie de página */
+footer {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro */
+    color: white;
+    padding: 10px;
+}

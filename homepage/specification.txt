@@ -1,0 +1,28 @@
+HTML Tags Used:
+
+<html> - Defines the start of the HTML document.
+<head> - Contains metadata, including links to stylesheets and the document title.
+<meta> - Provides metadata such as character encoding and viewport settings.
+<link> - Used to link external resources like CSS stylesheets.
+<title> - Defines the title of the webpage that appears in the browser tab.
+<body> - Defines the main content of the HTML document.
+<nav> - Used to create a navigation bar for site links.
+<ul> - Represents an unordered list of items.
+<li> - Defines individual list items within a list.
+<img> - Embeds an image into the page.
+
+
+
+CSS Properties Used:
+
+background - Used to set the background of the page with a linear gradient.
+height - Specifies the height of the body to ensure the background covers the entire page.
+margin - Removes default margins to ensure the background and content fit properly.
+color - Defines the text color as white to contrast with the dark background.
+display - Used in Bootstrap's grid system to display images responsively.
+
+JavaScript and Bootstrap Use:
+
+JavaScript: The script listens for the DOMContentLoaded event to ensure the DOM is fully loaded. Once the page is ready,
+it attaches an event listener to the header (<header> with class jumbotron). When the header is clicked, an alert saying "Welcome to My Website!" is displayed.
+Bootstrap: Used for the responsive layout of the page, including the navigation bar and the grid system that displays images in a neat format.
