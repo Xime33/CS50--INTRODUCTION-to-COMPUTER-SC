@@ -1,0 +1,12 @@
+i use this query to get the AVG for the parameters that spotify uses to discover the aura:
+SELECT AVG(energy), AVG(valence), AVG(danceability) FROM songs;
+
+this are the results:
++-------------+--------------+-------------------+
+| AVG(energy) | AVG(valence) | AVG(danceability) |
++-------------+--------------+-------------------+
+| 0.65906     | 0.484443     | 0.71646           |
++-------------+--------------+-------------------+
+
+We can see that a person with this averages is very motivated, the avg for danceability is almost 1, also the energy with a value of 0.65.
+we can assume that this playlist has a motivated aura but with emotionals complexity due to the low value of valence
