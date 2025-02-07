@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harry Potter Quiz</title>
+    <style>
+        /* Set background and font styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('/static/f.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for better visibility */
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+
+        button {
+            background-color: #ff9900;
+            color: white;
+            font-size: 1.5rem;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow */
+        }
+
+        button:hover {
+            background-color: #e68a00;
+            transform: scale(1.1); /* Slightly enlarge the button on hover */
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem; /* Adjust font size for mobile */
+            }
+
+            button {
+                font-size: 1.2rem; /* Adjust button size for mobile */
+                padding: 12px 25px;
+            }
+        }
+    </style>
+    <!-- Import Harry Potter-style font (Cinzel) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Which Harry Potter character are YOU?</h1>
+    <p>Click the button below to start the quiz and find out which Harry Potter character you resemble!</p>
+
+    <!-- Button to redirect to quiz page -->
+    <button onclick="window.location.href='/quiz'">Start the Quiz</button>
+</body>
+<footer>
+    <p>Created with ❤️ by Ximena</p>
+</footer>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harry Potter Quiz</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a, #222222);
+            color: #f1f1f1;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-family: 'HarryP', sans-serif;
+            font-size: 8vw; /* Make title responsive based on viewport width */
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #ffcc00;
+            text-shadow: 2px 2px 5px #000;
+            animation: fadeIn 2s ease-out;
+        }
+
+        h2 {
+            font-family: 'HarryP', sans-serif;
+            font-size: 2rem;
+            margin: 20px 0;
+            color: #ff9900;
+            text-shadow: 2px 2px 5px #000;
+        }
+
+        .question {
+            display: block;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border: 2px solid #ff9900;
+            width: 80%;
+            margin: 20px auto;
+            text-align: left;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+        }
+
+        .question p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+            accent-color: #ff9900;
+        }
+
+        button {
+            background-color: #ff9900;
+            color: white;
+            font-size: 1.2rem;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            margin: 20px 10px;
+            display: inline-block;
+        }
+
+        button:hover {
+            background-color: #e68a00;
+            transform: scale(1.05);
+        }
+
+        #submit-button {
+            display: inline-block;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            text-align: center;
+            color: #ffcc00;
+            font-family: 'HarryP', sans-serif;
+            animation: fadeIn 2s ease-out;
+        }
+
+        #result img {
+            max-width: 100%;  /* Ensure the image scales properly on small screens */
+            width: 100%; /* Make sure the image takes the full width of its container */
+            max-height: 400px; /* Limit the max height to prevent it from getting too large */
+            margin-top: 20px;
+            border-radius: 10px;
+            border: 2px solid #ffcc00;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @font-face {
+            font-family: 'HarryP';
+            src: url('https://fonts.cdnfonts.com/s/10699/HarryP.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Additional style for when the quiz questions are hidden */
+        .hidden {
+            display: none;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 6vw; /* Adjust font-size for tablets */
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .question {
+                width: 90%; /* Make the questions take more space on smaller screens */
+            }
+
+            .question p {
+                font-size: 1rem;
+            }
+
+            button {
+                font-size: 1rem;
+                padding: 10px 15px;
+            }
+
+            #result img {
+                max-width: 90%; /* Adjust the image width for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 7vw; /* Further reduce font size on very small screens */
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .question {
+                width: 100%; /* Full width for questions on very small screens */
+            }
+
+            .question p {
+                font-size: 0.9rem;
+            }
+
+            button {
+                font-size: 0.9rem;
+                padding: 8px 12px;
+            }
+
+            #result img {
+                max-width: 90%; /* Even smaller image on small screens */
+            }
+        }
+
+        /* For larger screens, adjust the image size */
+        @media (min-width: 769px) {
+            #result img {
+                max-width: 50%; /* Limit the image size to 50% of the container on desktop screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Discover Your Inner Wizard: Which Harry Potter Character Are You?</h1>
+
+    <form id="quiz-form">
+        <div class="question">
+            <p>How do you prefer to spend your free time when not studying magic?</p>
+            <input type="radio" name="q1" value="Relaxing"> Relaxing with a good book in the Gryffindor common room<br>
+            <input type="radio" name="q1" value="Adventuring"> Embarking on a daring adventure in the Forbidden Forest<br>
+            <input type="radio" name="q1" value="Studying"> Perfecting spells and potions in the library<br>
+        </div>
+
+        <div class="question">
+            <p>What color represents your magical aura the most?</p>
+            <input type="radio" name="q2" value="Red"> Bold and fiery Red, like the Gryffindor house crest<br>
+            <input type="radio" name="q2" value="Blue"> Calm and steady Blue, like the waters of the Black Lake<br>
+            <input type="radio" name="q2" value="Green"> Enigmatic and mysterious Green, like the Slytherin serpent<br>
+        </div>
+
+        <div class="question">
+            <p>How do you react when faced with a dark and mysterious situation?</p>
+            <input type="radio" name="q3" value="Stay calm"> Stay calm and focus on finding a magical solution<br>
+            <input type="radio" name="q3" value="Get frustrated"> Get frustrated, but rise to the challenge with all my might<br>
+            <input type="radio" name="q3" value="Look for help"> Seek help from others – we’re stronger together, like the Weasley twins<br>
+        </div>
+
+        <div class="question">
+            <p>Which of these would you rather do on a Friday night?</p>
+            <input type="radio" name="q4" value="Stay at home"> Stay at home, watch a movie, and relax<br>
+            <input type="radio" name="q4" value="Go out with friends"> Go out with friends and have fun<br>
+            <input type="radio" name="q4" value="Study or read"> Study or read something interesting<br>
+        </div>
+
+        <div class="question">
+            <p>Which type of magic do you find most fascinating?</p>
+            <input type="radio" name="q5" value="Relaxing"> Spells that help people and protect others<br>
+            <input type="radio" name="q5" value="Adventuring"> Potions that can alter reality<br>
+            <input type="radio" name="q5" value="Studying"> Dark magic – the power to control things<br>
+        </div>
+
+        <div class="question">
+            <p>What would your Patronus be?</p>
+            <input type="radio" name="q6" value="Red"> A unicorn, because I’m just that magical<br>
+            <input type="radio" name="q6" value="Blue"> A raccoon – I’m sneaky and love shiny things<br>
+            <input type="radio" name="q6" value="Green"> A dragon, because I like to keep things fiery!<br>
+        </div>
+
+        <div class="question">
+            <p>Which magical object would you most want to own?</p>
+            <input type="radio" name="q7" value="Red"> The Invisibility Cloak, so I can sneak around and steal all the snacks without anyone knowing<br>
+            <input type="radio" name="q7" value="Blue"> The Marauder's Map, because "I solemnly swear that I am up to no good" is my life motto<br>
+            <input type="radio" name="q7" value="Green"> The Elder Wand, because what better way to win every argument?<br>
+        </div>
+
+        <button type="submit" id="submit-button">Find Out!</button>
+    </form>
+
+    <div id="result" class="hidden"></div>
+
+    <script>
+        document.getElementById("quiz-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            let isValid = true;
+            const questions = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7',];
+            questions.forEach(question => {
+                const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                if (!selectedOption) {
+                    isValid = false;
+                    alert(`Please answer question: ${question.charAt(1)}`);
+                }
+            });
+
+            if (isValid) {
+                document.getElementById("submit-button").disabled = true;
+
+                const questionsElements = document.querySelectorAll('.question');
+                questionsElements.forEach(question => {
+                    question.classList.add('hidden');
+                });
+
+                fetch('/random-character')
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById("result").classList.remove('hidden');
+                        document.getElementById("result").innerHTML =
+                            `<h2>You are: ${data.character}</h2>
+                             <img src="${data.image}" alt="${data.character}">`;
+
+                        document.getElementById("result").innerHTML +=
+                            `<br><button onclick="resetQuiz()">Try Again</button>
+                             <br><br><a href="/">Back to Home</a>`;
+                    });
+            }
+        });
+
+        function resetQuiz() {
+            document.getElementById("quiz-form").reset();
+            document.getElementById("submit-button").disabled = false;
+
+            const questionsElements = document.querySelectorAll('.question');
+            questionsElements.forEach(question => {
+                question.classList.remove('hidden');
+            });
+
+            document.getElementById("result").innerHTML = '';
+        }
+    </script>
+
+</body>
+</html>
